@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,td, th{
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+        }
+        .edit-button {
+  background-color: #4CAF50; /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 10px 20px; /* Some padding */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Make the button inline-block */
+  font-size: 16px; /* Increase font size */
+  margin: 4px 2px; /* Add some margin */
+  cursor: pointer; /* Add a pointer on hover */
+  border-radius: 12px; /* Rounded corners */
+}
+
+.edit-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+    </style>
+</head>
+<body>
+    <table>
+        <tr><th>ID</th>
+            <th>useranme</th>
+            <th>email</th></tr>
+
+       
+          <%for(userd of result){%>
+            <tr>
+                <td><%=userd.id%></td>
+                <td><%=userd.username%></td>
+                <td><%=userd.email%></td>
+                <form  method="GET" action="/user/<%=userd.id%>/edit">
+                    <td><button class=" edit-button">Edit useranme</button></td>
+                </form>
+
+            </tr>
+                
+
+            <%}%>
+          
+
+
+    </table>
+    
+</body>
+</html>
